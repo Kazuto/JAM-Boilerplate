@@ -91,3 +91,5 @@ sw.*
 
 # VS Code local history
 .history
+
+/dist

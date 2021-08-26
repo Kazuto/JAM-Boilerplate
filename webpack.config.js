@@ -8,7 +8,7 @@ const fileSuffix = env === 'development' ? '' : '-[contenthash].min'
 
 module.exports = {
   entry: {
-    app: ['./src/js/main.js', './src/scss/app.scss']
+    app: ['./src/index.html', './src/js/main.js', './src/css/style.css']
   },
 
   module: {
@@ -23,7 +23,7 @@ module.exports = {
         use: ['babel-loader', 'eslint-loader']
       },
       {
-        test: /\.s[ac]ss$/,
+        test: /\.css$/,
         use: [
           {
             loader: 'file-loader',
@@ -34,7 +34,7 @@ module.exports = {
           },
           'extract-loader',
           'css-loader',
-          'sass-loader'
+          'postcss-loader'
         ]
       },
       {
